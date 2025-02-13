@@ -26,6 +26,8 @@ if __name__ == "__main__":
         source=source_dataloader,
         target=target_dataloader,
         batch_size=BATCH_SIZE,
+        source_state="west_bengal",
+        target_state="haryana",
         num_epochs=EPOCHS,
         device=DEVICE
     )

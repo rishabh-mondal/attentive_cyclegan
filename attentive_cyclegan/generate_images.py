@@ -7,13 +7,13 @@ from models.generator import Generator  # Ensure correct import
 
 
 source_state_name = "west_bengal"
-target_state_name = "harayana"
+target_state_name = "haryana"
 
 
 
 
 # Set paths manually
-WEIGHTS_PATH = "/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_WB_to_Haryana_60.pth"
+WEIGHTS_PATH = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_{source_state_name}_to_{target_state_name}_20.pth"
 SOURCE_DIR = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/region_performance/{source_state_name}_same_class_count_10_120_1000/images"
 OUTPUT_DIR = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/synthetic_data/{source_state_name}_to_{target_state_name}/images"
 
