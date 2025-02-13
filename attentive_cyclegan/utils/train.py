@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from itertools import zip_longest
-# from torch.utils.tensorboard import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 from models.generator import Generator
 from models.discriminator import Discriminator
 
@@ -12,7 +12,7 @@ import time
 # Suppress all warnings
 warnings.filterwarnings("ignore")
 
-def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_logs"):
+def train(source, target, batch_size,source_state,target_state, num_epochs, device="cuda", log_dir="tb_logs"):
     """
     Trains the CycleGAN model using DataParallel for multi-GPU support.
 
@@ -44,7 +44,7 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
         discriminator_y = nn.DataParallel(discriminator_y)
 
     # Optimizers
-    lr = 2e-4
+    lr = 1e-4
     betas = (0.5, 0.999)
     generator_g_optimizer = optim.Adam(generator_g.parameters(), lr=lr, betas=betas)
     generator_f_optimizer = optim.Adam(generator_f.parameters(), lr=lr, betas=betas)
@@ -53,7 +53,7 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
 
     # Learning rate schedulers
     def lr_lambda(epoch):
-        return 1.0 - max(0, epoch - 100) / 100  
+        return 1.0 - max(0, epoch - 10) / 150  
 
     scheduler_g = optim.lr_scheduler.LambdaLR(generator_g_optimizer, lr_lambda=lr_lambda)
     scheduler_f = optim.lr_scheduler.LambdaLR(generator_f_optimizer, lr_lambda=lr_lambda)
@@ -61,7 +61,7 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
     scheduler_dy = optim.lr_scheduler.LambdaLR(discriminator_y_optimizer, lr_lambda=lr_lambda)
 
     # Initialize TensorBoard
-    # writer = SummaryWriter(log_dir=log_dir)
+    writer = SummaryWriter(log_dir=log_dir)
 
     print(f"Training started for {num_epochs} epochs on {device}...")
 
@@ -115,9 +115,12 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
             # Train Discriminators X, Y
             # -------------------------
 
+            real_label_smooth=0.9
+            fake_label_smooth=0.1
+
             # Discriminator X loss
-            real_loss_x = adversarial_loss(discriminator_x(real_x), torch.ones_like(discriminator_x(real_x)))
-            fake_loss_x = adversarial_loss(discriminator_x(fake_x.detach()), torch.zeros_like(discriminator_x(fake_x)))
+            real_loss_x = adversarial_loss(discriminator_x(real_x), torch.full_like(discriminator_x(real_x), real_label_smooth))
+            fake_loss_x = adversarial_loss(discriminator_x(fake_x.detach()), torch.full_like(discriminator_x(fake_x), fake_label_smooth))
             dx_loss = (real_loss_x + fake_loss_x) * 0.5
 
             discriminator_x_optimizer.zero_grad()
@@ -125,8 +128,8 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
             discriminator_x_optimizer.step()
 
             # Discriminator Y loss
-            real_loss_y = adversarial_loss(discriminator_y(real_y), torch.ones_like(discriminator_y(real_y)))
-            fake_loss_y = adversarial_loss(discriminator_y(fake_y.detach()), torch.zeros_like(discriminator_y(fake_y)))
+            real_loss_y = adversarial_loss(discriminator_y(real_y), torch.full_like(discriminator_y(real_y), real_label_smooth))
+            fake_loss_y = adversarial_loss(discriminator_y(fake_y.detach()), torch.full_like(discriminator_y(fake_y), fake_label_smooth))
             dy_loss = (real_loss_y + fake_loss_y) * 0.5
 
             discriminator_y_optimizer.zero_grad()
@@ -149,12 +152,12 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
 
 
         # # Log losses to TensorBoard
-        # writer.add_scalar('Loss/Generator_G', g_loss_total, epoch + 1)
-        # writer.add_scalar('Loss/Generator_F', f_loss_total, epoch + 1)
-        # writer.add_scalar('Loss/Discriminator_X', dx_loss_total, epoch + 1)
-        # writer.add_scalar('Loss/Discriminator_Y', dy_loss_total, epoch + 1)
-        # writer.add_scalar('Loss/Cycle_Consistency', cycle_loss_total, epoch + 1)
-        # writer.add_scalar('Loss/Identity', identity_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Generator_G', g_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Generator_F', f_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Discriminator_X', dx_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Discriminator_Y', dy_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Cycle_Consistency', cycle_loss_total, epoch + 1)
+        writer.add_scalar('Loss/Identity', identity_loss_total, epoch + 1)
 
         # Print all losses per epoch
         print("-" * 60)
@@ -169,7 +172,7 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
 
         # Save model checkpoints every 10 epochs
         if (epoch + 1) % 20 == 0:
-            torch.save(generator_g.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_WB_to_Haryana_{epoch+1}.pth')
-            torch.save(generator_f.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_Haryana_to_WB_{epoch+1}.pth')
+            torch.save(generator_g.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_{source_state}_to_{target_state}_{epoch+1}.pth')
+            torch.save(generator_f.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_{target_state}_to_{source_state}_{epoch+1}.pth')
 
     print("Training Complete!")

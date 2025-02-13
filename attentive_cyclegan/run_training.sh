@@ -5,7 +5,7 @@
 LOG_FILE="train_log.log"
 
 # Define hyperparameters
-BATCH_SIZE=4
+BATCH_SIZE=6
 EPOCHS=160
 NUM_GPUS=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)
 PYTHON_SCRIPT="/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/attentive_cyclegan/main.py"
