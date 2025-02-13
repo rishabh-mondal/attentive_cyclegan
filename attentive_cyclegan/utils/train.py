@@ -167,9 +167,9 @@ def train(source, target, batch_size, num_epochs, device="cuda", log_dir="tb_log
         print(f"  Identity Loss: {identity_loss_total:.4f}")
         print("-" * 60)
 
-            # Save model checkpoints every 10 epochs
-    if (epoch + 1) % 20 == 0:
-        torch.save(generator_g.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_WB_to_Haryana_{epoch+1}.pth')
-        torch.save(generator_f.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_Haryana_to_WB_{epoch+1}.pth')
+        # Save model checkpoints every 10 epochs
+        if (epoch + 1) % 20 == 0:
+            torch.save(generator_g.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_WB_to_Haryana_{epoch+1}.pth')
+            torch.save(generator_f.state_dict(), f'/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_Haryana_to_WB_{epoch+1}.pth')
 
     print("Training Complete!")

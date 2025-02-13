@@ -1,0 +1,48 @@
+Using 3 GPUs for training on cuda with batch size 6 and 160 epochs...
+Using 3 GPUs for training.
+Training started for 160 epochs on cuda...
+------------------------------------------------------------
+Epoch [1/160] completed in 3.10 minutes.
+  Generator_G Loss: 409.6545
+  Generator_F Loss: 420.4354
+  Discriminator_X Loss: 47.9993
+  Discriminator_Y Loss: 46.8242
+  Cycle Consistency Loss: 450.0292
+  Identity Loss: 222.9948
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [2/160] completed in 3.07 minutes.
+  Generator_G Loss: 272.2209
+  Generator_F Loss: 276.8284
+  Discriminator_X Loss: 23.5653
+  Discriminator_Y Loss: 20.9520
+  Cycle Consistency Loss: 290.6714
+  Identity Loss: 147.1276
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [3/160] completed in 3.07 minutes.
+  Generator_G Loss: 353.6769
+  Generator_F Loss: 391.1613
+  Discriminator_X Loss: 25.3402
+  Discriminator_Y Loss: 37.0934
+  Cycle Consistency Loss: 413.2650
+  Identity Loss: 211.7813
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [4/160] completed in 3.07 minutes.
+  Generator_G Loss: 529.1654
+  Generator_F Loss: 589.9905
+  Discriminator_X Loss: 19.2863
+  Discriminator_Y Loss: 0.6827
+  Cycle Consistency Loss: 665.2832
+  Identity Loss: 307.1794
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [5/160] completed in 3.07 minutes.
+  Generator_G Loss: 528.1868
+  Generator_F Loss: 570.4487
+  Discriminator_X Loss: 22.1279
+  Discriminator_Y Loss: 0.4779
+  Cycle Consistency Loss: 664.2688
+  Identity Loss: 296.2568
+------------------------------------------------------------
