@@ -1,705 +1,297 @@
+2025-02-13 23:50:54.285473: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-02-13 23:50:54.308230: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-02-13 23:50:54.308326: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-02-13 23:50:54.322239: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-02-13 23:50:55.161874: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 Using 3 GPUs for training on cuda with batch size 6 and 160 epochs...
 Using 3 GPUs for training.
 Training started for 160 epochs on cuda...
 ------------------------------------------------------------
-Epoch [1/160] completed in 3.10 minutes.
-  Generator_G Loss: 409.6545
-  Generator_F Loss: 420.4354
-  Discriminator_X Loss: 47.9993
-  Discriminator_Y Loss: 46.8242
-  Cycle Consistency Loss: 450.0292
-  Identity Loss: 222.9948
+Epoch [1/160] completed in 3.11 minutes.
+  Generator_G Loss: 327.1713
+  Generator_F Loss: 320.5224
+  Discriminator_X Loss: 26.5428
+  Discriminator_Y Loss: 26.7716
+  Cycle Consistency Loss: 441.2023
+  Identity Loss: 89.5042
 ------------------------------------------------------------
 ------------------------------------------------------------
 Epoch [2/160] completed in 3.07 minutes.
-  Generator_G Loss: 272.2209
-  Generator_F Loss: 276.8284
-  Discriminator_X Loss: 23.5653
-  Discriminator_Y Loss: 20.9520
-  Cycle Consistency Loss: 290.6714
-  Identity Loss: 147.1276
+  Generator_G Loss: 213.0229
+  Generator_F Loss: 214.1610
+  Discriminator_X Loss: 13.0419
+  Discriminator_Y Loss: 17.8194
+  Cycle Consistency Loss: 274.3369
+  Identity Loss: 59.6104
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [3/160] completed in 3.07 minutes.
-  Generator_G Loss: 353.6769
-  Generator_F Loss: 391.1613
-  Discriminator_X Loss: 25.3402
-  Discriminator_Y Loss: 37.0934
-  Cycle Consistency Loss: 413.2650
-  Identity Loss: 211.7813
+Epoch [3/160] completed in 3.08 minutes.
+  Generator_G Loss: 195.5307
+  Generator_F Loss: 212.0345
+  Discriminator_X Loss: 12.8776
+  Discriminator_Y Loss: 14.3303
+  Cycle Consistency Loss: 257.3789
+  Identity Loss: 56.5157
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [4/160] completed in 3.07 minutes.
-  Generator_G Loss: 529.1654
-  Generator_F Loss: 589.9905
-  Discriminator_X Loss: 19.2863
-  Discriminator_Y Loss: 0.6827
-  Cycle Consistency Loss: 665.2832
-  Identity Loss: 307.1794
+Epoch [4/160] completed in 3.08 minutes.
+  Generator_G Loss: 213.6318
+  Generator_F Loss: 253.0803
+  Discriminator_X Loss: 9.9665
+  Discriminator_Y Loss: 13.1720
+  Cycle Consistency Loss: 308.6221
+  Identity Loss: 67.6181
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [5/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.1868
-  Generator_F Loss: 570.4487
-  Discriminator_X Loss: 22.1279
-  Discriminator_Y Loss: 0.4779
-  Cycle Consistency Loss: 664.2688
-  Identity Loss: 296.2568
+Epoch [5/160] completed in 3.08 minutes.
+  Generator_G Loss: 203.2944
+  Generator_F Loss: 193.8558
+  Discriminator_X Loss: 13.8472
+  Discriminator_Y Loss: 11.5383
+  Cycle Consistency Loss: 247.5204
+  Identity Loss: 53.4008
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [6/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.1119
-  Generator_F Loss: 573.4854
-  Discriminator_X Loss: 22.5708
-  Discriminator_Y Loss: 0.3922
-  Cycle Consistency Loss: 664.2750
-  Identity Loss: 298.4836
+Epoch [6/160] completed in 3.08 minutes.
+  Generator_G Loss: 203.9550
+  Generator_F Loss: 192.4716
+  Discriminator_X Loss: 12.7795
+  Discriminator_Y Loss: 8.3367
+  Cycle Consistency Loss: 241.8488
+  Identity Loss: 52.6795
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [7/160] completed in 3.06 minutes.
-  Generator_G Loss: 528.5301
-  Generator_F Loss: 573.6946
-  Discriminator_X Loss: 22.1547
-  Discriminator_Y Loss: 0.3413
-  Cycle Consistency Loss: 664.8125
-  Identity Loss: 299.0180
+Epoch [7/160] completed in 3.08 minutes.
+  Generator_G Loss: 203.2900
+  Generator_F Loss: 186.9511
+  Discriminator_X Loss: 12.6516
+  Discriminator_Y Loss: 8.3266
+  Cycle Consistency Loss: 239.6015
+  Identity Loss: 53.0557
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [8/160] completed in 3.07 minutes.
-  Generator_G Loss: 527.3639
-  Generator_F Loss: 565.2019
-  Discriminator_X Loss: 21.9337
-  Discriminator_Y Loss: 0.3127
-  Cycle Consistency Loss: 663.1763
-  Identity Loss: 293.8502
+Epoch [8/160] completed in 3.08 minutes.
+  Generator_G Loss: 214.4869
+  Generator_F Loss: 191.8516
+  Discriminator_X Loss: 11.9176
+  Discriminator_Y Loss: 5.5931
+  Cycle Consistency Loss: 243.2482
+  Identity Loss: 53.0488
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [9/160] completed in 3.06 minutes.
-  Generator_G Loss: 527.9739
-  Generator_F Loss: 564.0899
-  Discriminator_X Loss: 21.7450
-  Discriminator_Y Loss: 0.2998
-  Cycle Consistency Loss: 663.7573
-  Identity Loss: 293.1246
+Epoch [9/160] completed in 3.09 minutes.
+  Generator_G Loss: 213.2583
+  Generator_F Loss: 182.0598
+  Discriminator_X Loss: 13.9985
+  Discriminator_Y Loss: 5.3158
+  Cycle Consistency Loss: 237.7166
+  Identity Loss: 52.1577
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [10/160] completed in 3.06 minutes.
-  Generator_G Loss: 528.3065
-  Generator_F Loss: 568.6599
-  Discriminator_X Loss: 21.2115
-  Discriminator_Y Loss: 0.3780
-  Cycle Consistency Loss: 664.2192
-  Identity Loss: 293.4337
+Epoch [10/160] completed in 3.07 minutes.
+  Generator_G Loss: 210.2632
+  Generator_F Loss: 177.8841
+  Discriminator_X Loss: 13.3875
+  Discriminator_Y Loss: 4.8339
+  Cycle Consistency Loss: 236.1230
+  Identity Loss: 51.1457
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [11/160] completed in 3.07 minutes.
-  Generator_G Loss: 529.2615
-  Generator_F Loss: 587.2021
-  Discriminator_X Loss: 18.5242
-  Discriminator_Y Loss: 0.6176
-  Cycle Consistency Loss: 665.2759
-  Identity Loss: 299.4229
+Epoch [11/160] completed in 3.08 minutes.
+  Generator_G Loss: 210.2354
+  Generator_F Loss: 179.3889
+  Discriminator_X Loss: 14.3397
+  Discriminator_Y Loss: 4.1655
+  Cycle Consistency Loss: 231.0318
+  Identity Loss: 50.9370
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [12/160] completed in 3.07 minutes.
-  Generator_G Loss: 531.0025
-  Generator_F Loss: 616.8004
-  Discriminator_X Loss: 13.8017
-  Discriminator_Y Loss: 0.3870
-  Cycle Consistency Loss: 667.0493
-  Identity Loss: 315.9454
+Epoch [12/160] completed in 3.08 minutes.
+  Generator_G Loss: 213.3509
+  Generator_F Loss: 180.1216
+  Discriminator_X Loss: 13.1138
+  Discriminator_Y Loss: 3.4359
+  Cycle Consistency Loss: 233.5507
+  Identity Loss: 50.9412
 ------------------------------------------------------------
 ------------------------------------------------------------
 Epoch [13/160] completed in 3.07 minutes.
-  Generator_G Loss: 529.3181
-  Generator_F Loss: 617.3696
-  Discriminator_X Loss: 13.4890
-  Discriminator_Y Loss: 1.0619
-  Cycle Consistency Loss: 664.9921
-  Identity Loss: 309.0002
+  Generator_G Loss: 208.1766
+  Generator_F Loss: 176.3173
+  Discriminator_X Loss: 13.7107
+  Discriminator_Y Loss: 4.0367
+  Cycle Consistency Loss: 224.9184
+  Identity Loss: 48.2293
 ------------------------------------------------------------
 ------------------------------------------------------------
-Epoch [14/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.8122
-  Generator_F Loss: 592.3237
-  Discriminator_X Loss: 14.2927
-  Discriminator_Y Loss: 0.5033
-  Cycle Consistency Loss: 665.0467
-  Identity Loss: 300.1739
+Epoch [14/160] completed in 3.08 minutes.
+  Generator_G Loss: 209.4244
+  Generator_F Loss: 176.3112
+  Discriminator_X Loss: 11.5697
+  Discriminator_Y Loss: 3.7450
+  Cycle Consistency Loss: 225.7527
+  Identity Loss: 50.0210
 ------------------------------------------------------------
 ------------------------------------------------------------
 Epoch [15/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.4720
-  Generator_F Loss: 575.6385
-  Discriminator_X Loss: 17.3558
-  Discriminator_Y Loss: 0.7018
-  Cycle Consistency Loss: 663.9712
-  Identity Loss: 293.1617
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [16/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.0474
-  Generator_F Loss: 571.2800
-  Discriminator_X Loss: 17.9010
-  Discriminator_Y Loss: 0.6261
-  Cycle Consistency Loss: 663.9522
-  Identity Loss: 291.7383
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [17/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.9214
-  Generator_F Loss: 616.1940
-  Discriminator_X Loss: 11.8512
-  Discriminator_Y Loss: 0.6999
-  Cycle Consistency Loss: 664.7359
-  Identity Loss: 308.5021
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [18/160] completed in 3.07 minutes.
-  Generator_G Loss: 528.6252
-  Generator_F Loss: 596.5566
-  Discriminator_X Loss: 11.8516
-  Discriminator_Y Loss: 0.5958
-  Cycle Consistency Loss: 664.3657
-  Identity Loss: 299.5491
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [19/160] completed in 3.06 minutes.
-  Generator_G Loss: 528.2875
-  Generator_F Loss: 591.2495
-  Discriminator_X Loss: 14.3157
-  Discriminator_Y Loss: 0.6601
-  Cycle Consistency Loss: 664.1078
-  Identity Loss: 296.7352
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [20/160] completed in 3.07 minutes.
-  Generator_G Loss: 543.3077
-  Generator_F Loss: 635.9705
-  Discriminator_X Loss: 9.6629
-  Discriminator_Y Loss: 0.6941
-  Cycle Consistency Loss: 678.9234
-  Identity Loss: 322.3076
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [21/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.0548
-  Generator_F Loss: 812.2685
-  Discriminator_X Loss: 1.0205
-  Discriminator_Y Loss: 0.4361
-  Cycle Consistency Loss: 964.8806
-  Identity Loss: 482.4404
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [22/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.7225
-  Generator_F Loss: 812.5098
-  Discriminator_X Loss: 0.5041
-  Discriminator_Y Loss: 0.8228
-  Cycle Consistency Loss: 965.4080
-  Identity Loss: 482.7041
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [23/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.8889
-  Generator_F Loss: 812.9612
-  Discriminator_X Loss: 0.3854
-  Discriminator_Y Loss: 0.4244
-  Cycle Consistency Loss: 965.9074
-  Identity Loss: 482.9538
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [24/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.6525
-  Generator_F Loss: 812.7970
-  Discriminator_X Loss: 0.3063
-  Discriminator_Y Loss: 0.8594
-  Cycle Consistency Loss: 965.4842
-  Identity Loss: 482.7422
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [25/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.2522
-  Generator_F Loss: 812.6280
-  Discriminator_X Loss: 0.2637
-  Discriminator_Y Loss: 0.3339
-  Cycle Consistency Loss: 965.2109
-  Identity Loss: 482.6056
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [26/160] completed in 3.07 minutes.
-  Generator_G Loss: 830.2965
-  Generator_F Loss: 813.0344
-  Discriminator_X Loss: 0.2350
-  Discriminator_Y Loss: 0.8852
-  Cycle Consistency Loss: 966.0018
-  Identity Loss: 483.0010
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [27/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.0974
-  Generator_F Loss: 812.0968
-  Discriminator_X Loss: 0.2238
-  Discriminator_Y Loss: 0.3946
-  Cycle Consistency Loss: 964.7866
-  Identity Loss: 482.3934
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [28/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.2811
-  Generator_F Loss: 812.5548
-  Discriminator_X Loss: 0.2404
-  Discriminator_Y Loss: 0.4988
-  Cycle Consistency Loss: 965.1018
-  Identity Loss: 482.5511
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [29/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.2529
-  Generator_F Loss: 811.8838
-  Discriminator_X Loss: 0.2299
-  Discriminator_Y Loss: 0.9614
-  Cycle Consistency Loss: 964.5013
-  Identity Loss: 482.2509
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [30/160] completed in 3.07 minutes.
-  Generator_G Loss: 829.4364
-  Generator_F Loss: 813.2021
-  Discriminator_X Loss: 0.2584
-  Discriminator_Y Loss: 0.4789
-  Cycle Consistency Loss: 965.6357
-  Identity Loss: 482.8182
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [31/160] completed in 3.07 minutes.
-  Generator_G Loss: 944.8031
-  Generator_F Loss: 1165.2051
-  Discriminator_X Loss: 0.3036
-  Discriminator_Y Loss: 65.0730
-  Cycle Consistency Loss: 1317.7088
-  Identity Loss: 590.6450
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [32/160] completed in 3.07 minutes.
-  Generator_G Loss: 1018.6835
-  Generator_F Loss: 1346.1560
-  Discriminator_X Loss: 0.2462
-  Discriminator_Y Loss: 10.8893
-  Cycle Consistency Loss: 1498.7132
-  Identity Loss: 703.2754
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [33/160] completed in 3.07 minutes.
-  Generator_G Loss: 919.2791
-  Generator_F Loss: 1643.2940
-  Discriminator_X Loss: 0.2466
-  Discriminator_Y Loss: 5.4523
-  Cycle Consistency Loss: 1795.7714
-  Identity Loss: 591.4132
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [34/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.0207
-  Generator_F Loss: 1614.3561
-  Discriminator_X Loss: 0.2637
-  Discriminator_Y Loss: 0.6562
-  Cycle Consistency Loss: 1766.7136
-  Identity Loss: 608.3824
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [35/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9270
-  Generator_F Loss: 1614.8992
-  Discriminator_X Loss: 0.3543
-  Discriminator_Y Loss: 0.4423
-  Cycle Consistency Loss: 1767.3748
-  Identity Loss: 608.5671
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [36/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9563
-  Generator_F Loss: 1614.2307
-  Discriminator_X Loss: 0.2489
-  Discriminator_Y Loss: 0.3652
-  Cycle Consistency Loss: 1766.7742
-  Identity Loss: 608.6546
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [37/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.8162
-  Generator_F Loss: 1614.5954
-  Discriminator_X Loss: 0.3199
-  Discriminator_Y Loss: 0.3463
-  Cycle Consistency Loss: 1766.9490
-  Identity Loss: 608.4948
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [38/160] completed in 3.07 minutes.
-  Generator_G Loss: 953.6767
-  Generator_F Loss: 1614.3691
-  Discriminator_X Loss: 0.2762
-  Discriminator_Y Loss: 0.5437
-  Cycle Consistency Loss: 1766.6795
-  Identity Loss: 608.3344
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [39/160] completed in 3.08 minutes.
-  Generator_G Loss: 954.5693
-  Generator_F Loss: 1614.6038
-  Discriminator_X Loss: 0.2640
-  Discriminator_Y Loss: 0.4169
-  Cycle Consistency Loss: 1767.0797
-  Identity Loss: 608.5008
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [40/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.5362
-  Generator_F Loss: 1614.4747
-  Discriminator_X Loss: 0.4137
-  Discriminator_Y Loss: 0.4489
-  Cycle Consistency Loss: 1766.6193
-  Identity Loss: 608.4298
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [41/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.7466
-  Generator_F Loss: 1614.4060
-  Discriminator_X Loss: 0.3383
-  Discriminator_Y Loss: 0.5132
-  Cycle Consistency Loss: 1766.9463
-  Identity Loss: 608.4744
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [42/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.6112
-  Generator_F Loss: 1614.4121
-  Discriminator_X Loss: 0.2737
-  Discriminator_Y Loss: 0.4578
-  Cycle Consistency Loss: 1766.7109
-  Identity Loss: 608.4153
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [43/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9319
-  Generator_F Loss: 1614.3830
-  Discriminator_X Loss: 0.2903
-  Discriminator_Y Loss: 0.4649
-  Cycle Consistency Loss: 1766.8601
-  Identity Loss: 608.5232
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [44/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3804
-  Generator_F Loss: 1614.1377
-  Discriminator_X Loss: 0.3169
-  Discriminator_Y Loss: 0.6426
-  Cycle Consistency Loss: 1766.5391
-  Identity Loss: 608.6799
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [45/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3261
-  Generator_F Loss: 1614.4839
-  Discriminator_X Loss: 0.3361
-  Discriminator_Y Loss: 0.6682
-  Cycle Consistency Loss: 1767.0509
-  Identity Loss: 608.6662
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [46/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.7624
-  Generator_F Loss: 1614.2579
-  Discriminator_X Loss: 0.2945
-  Discriminator_Y Loss: 1.0047
-  Cycle Consistency Loss: 1766.3683
-  Identity Loss: 608.2524
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [47/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.6798
-  Generator_F Loss: 1614.3826
-  Discriminator_X Loss: 0.3144
-  Discriminator_Y Loss: 0.5804
-  Cycle Consistency Loss: 1766.5555
-  Identity Loss: 608.2493
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [48/160] completed in 3.06 minutes.
-  Generator_G Loss: 955.3694
-  Generator_F Loss: 1614.5104
-  Discriminator_X Loss: 0.2287
-  Discriminator_Y Loss: 0.7790
-  Cycle Consistency Loss: 1767.0982
-  Identity Loss: 608.5558
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [49/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.0673
-  Generator_F Loss: 1614.5854
-  Discriminator_X Loss: 0.3569
-  Discriminator_Y Loss: 0.8225
-  Cycle Consistency Loss: 1766.8940
-  Identity Loss: 608.3899
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [50/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9865
-  Generator_F Loss: 1614.2489
-  Discriminator_X Loss: 0.3738
-  Discriminator_Y Loss: 0.7531
-  Cycle Consistency Loss: 1766.4344
-  Identity Loss: 608.4086
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [51/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.2933
-  Generator_F Loss: 1614.3427
-  Discriminator_X Loss: 0.3047
-  Discriminator_Y Loss: 1.1189
-  Cycle Consistency Loss: 1766.8405
-  Identity Loss: 608.4738
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [52/160] completed in 3.16 minutes.
-  Generator_G Loss: 954.8916
-  Generator_F Loss: 1614.1452
-  Discriminator_X Loss: 0.2774
-  Discriminator_Y Loss: 0.4473
-  Cycle Consistency Loss: 1766.4025
-  Identity Loss: 608.4084
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [53/160] completed in 3.19 minutes.
-  Generator_G Loss: 954.7084
-  Generator_F Loss: 1614.5681
-  Discriminator_X Loss: 0.2420
-  Discriminator_Y Loss: 0.4745
-  Cycle Consistency Loss: 1766.8588
-  Identity Loss: 608.2020
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [54/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.4482
-  Generator_F Loss: 1614.5969
-  Discriminator_X Loss: 0.3955
-  Discriminator_Y Loss: 1.1305
-  Cycle Consistency Loss: 1766.9506
-  Identity Loss: 608.5385
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [55/160] completed in 3.06 minutes.
-  Generator_G Loss: 955.2467
-  Generator_F Loss: 1614.2378
-  Discriminator_X Loss: 0.3124
-  Discriminator_Y Loss: 0.3694
-  Cycle Consistency Loss: 1766.6183
-  Identity Loss: 608.5760
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [56/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.7679
-  Generator_F Loss: 1613.9840
-  Discriminator_X Loss: 0.2283
-  Discriminator_Y Loss: 0.9385
-  Cycle Consistency Loss: 1766.2013
-  Identity Loss: 608.2271
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [57/160] completed in 3.06 minutes.
-  Generator_G Loss: 955.1515
-  Generator_F Loss: 1621.4448
-  Discriminator_X Loss: 16.0194
-  Discriminator_Y Loss: 0.4892
-  Cycle Consistency Loss: 1766.7710
-  Identity Loss: 608.4912
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [58/160] completed in 3.27 minutes.
-  Generator_G Loss: 955.2068
-  Generator_F Loss: 1613.8483
-  Discriminator_X Loss: 0.8027
-  Discriminator_Y Loss: 1.0544
-  Cycle Consistency Loss: 1766.6942
-  Identity Loss: 608.4791
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [59/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3900
-  Generator_F Loss: 1614.1203
-  Discriminator_X Loss: 0.3652
-  Discriminator_Y Loss: 0.4674
-  Cycle Consistency Loss: 1766.9726
-  Identity Loss: 608.7052
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [60/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.0991
-  Generator_F Loss: 1614.3521
-  Discriminator_X Loss: 0.2521
-  Discriminator_Y Loss: 0.4996
-  Cycle Consistency Loss: 1766.9782
-  Identity Loss: 608.4116
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [61/160] completed in 3.06 minutes.
-  Generator_G Loss: 955.1191
-  Generator_F Loss: 1614.0094
-  Discriminator_X Loss: 0.2069
-  Discriminator_Y Loss: 0.7956
-  Cycle Consistency Loss: 1766.5237
-  Identity Loss: 608.4209
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [62/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9275
-  Generator_F Loss: 1613.9253
-  Discriminator_X Loss: 0.1980
-  Discriminator_Y Loss: 0.5977
-  Cycle Consistency Loss: 1766.4175
-  Identity Loss: 608.3814
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [63/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.2641
-  Generator_F Loss: 1614.1933
-  Discriminator_X Loss: 0.1946
-  Discriminator_Y Loss: 0.6596
-  Cycle Consistency Loss: 1766.8103
-  Identity Loss: 608.4703
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [64/160] completed in 3.08 minutes.
-  Generator_G Loss: 955.3170
-  Generator_F Loss: 1614.3652
-  Discriminator_X Loss: 0.1606
-  Discriminator_Y Loss: 0.3028
-  Cycle Consistency Loss: 1767.0895
-  Identity Loss: 608.5710
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [65/160] completed in 3.08 minutes.
-  Generator_G Loss: 955.4132
-  Generator_F Loss: 1614.1928
-  Discriminator_X Loss: 0.1991
-  Discriminator_Y Loss: 0.5684
-  Cycle Consistency Loss: 1766.9071
-  Identity Loss: 608.5969
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [66/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3625
-  Generator_F Loss: 1614.2117
-  Discriminator_X Loss: 0.1814
-  Discriminator_Y Loss: 0.7691
-  Cycle Consistency Loss: 1766.8571
-  Identity Loss: 608.5396
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [67/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3765
-  Generator_F Loss: 1614.2242
-  Discriminator_X Loss: 0.2050
-  Discriminator_Y Loss: 0.4456
-  Cycle Consistency Loss: 1766.9014
-  Identity Loss: 608.5530
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [68/160] completed in 3.07 minutes.
-  Generator_G Loss: 954.9404
-  Generator_F Loss: 1614.1357
-  Discriminator_X Loss: 0.2275
-  Discriminator_Y Loss: 0.7278
-  Cycle Consistency Loss: 1766.5502
-  Identity Loss: 608.2737
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [69/160] completed in 3.08 minutes.
-  Generator_G Loss: 955.2762
-  Generator_F Loss: 1614.1965
-  Discriminator_X Loss: 0.1607
-  Discriminator_Y Loss: 0.5166
-  Cycle Consistency Loss: 1766.8337
-  Identity Loss: 608.4980
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [70/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.1340
-  Generator_F Loss: 1614.0310
-  Discriminator_X Loss: 0.2305
-  Discriminator_Y Loss: 0.5553
-  Cycle Consistency Loss: 1766.4513
-  Identity Loss: 608.4455
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [71/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3818
-  Generator_F Loss: 1614.5408
-  Discriminator_X Loss: 0.2747
-  Discriminator_Y Loss: 0.4916
-  Cycle Consistency Loss: 1767.2130
-  Identity Loss: 608.5446
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [72/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.6066
-  Generator_F Loss: 1614.2941
-  Discriminator_X Loss: 0.1946
-  Discriminator_Y Loss: 0.5584
-  Cycle Consistency Loss: 1766.9554
-  Identity Loss: 608.6456
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [73/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.1790
-  Generator_F Loss: 1614.3029
-  Discriminator_X Loss: 0.1926
-  Discriminator_Y Loss: 0.5518
-  Cycle Consistency Loss: 1766.8240
-  Identity Loss: 608.4325
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [74/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.3137
-  Generator_F Loss: 1614.2954
-  Discriminator_X Loss: 0.2267
-  Discriminator_Y Loss: 0.3364
-  Cycle Consistency Loss: 1766.9418
-  Identity Loss: 608.5374
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [75/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.6044
-  Generator_F Loss: 1614.2904
-  Discriminator_X Loss: 0.2701
-  Discriminator_Y Loss: 0.6570
-  Cycle Consistency Loss: 1766.7950
-  Identity Loss: 608.6289
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [76/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.0352
-  Generator_F Loss: 1614.1545
-  Discriminator_X Loss: 0.2820
-  Discriminator_Y Loss: 0.4186
-  Cycle Consistency Loss: 1766.5774
-  Identity Loss: 608.4551
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [77/160] completed in 3.07 minutes.
-  Generator_G Loss: 955.4842
-  Generator_F Loss: 1614.4905
-  Discriminator_X Loss: 0.1711
-  Discriminator_Y Loss: 0.5074
-  Cycle Consistency Loss: 1767.0942
-  Identity Loss: 608.5597
-------------------------------------------------------------
-------------------------------------------------------------
-Epoch [78/160] completed in 3.06 minutes.
-  Generator_G Loss: 955.2874
-  Generator_F Loss: 1614.1270
-  Discriminator_X Loss: 0.1512
-  Discriminator_Y Loss: 0.2877
-  Cycle Consistency Loss: 1766.7565
-  Identity Loss: 608.5623
+  Generator_G Loss: 203.9715
+  Generator_F Loss: 170.6254
+  Discriminator_X Loss: 12.6957
+  Discriminator_Y Loss: 3.3531
+  Cycle Consistency Loss: 219.1266
+  Identity Loss: 47.8020
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [16/160] completed in 3.08 minutes.
+  Generator_G Loss: 198.9049
+  Generator_F Loss: 170.4808
+  Discriminator_X Loss: 12.3616
+  Discriminator_Y Loss: 4.2065
+  Cycle Consistency Loss: 217.4159
+  Identity Loss: 47.0947
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [17/160] completed in 3.09 minutes.
+  Generator_G Loss: 199.8155
+  Generator_F Loss: 166.7258
+  Discriminator_X Loss: 12.7319
+  Discriminator_Y Loss: 3.7328
+  Cycle Consistency Loss: 213.9034
+  Identity Loss: 46.2121
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [18/160] completed in 3.08 minutes.
+  Generator_G Loss: 192.2470
+  Generator_F Loss: 164.4840
+  Discriminator_X Loss: 12.3051
+  Discriminator_Y Loss: 5.4031
+  Cycle Consistency Loss: 206.1928
+  Identity Loss: 44.2791
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [19/160] completed in 3.09 minutes.
+  Generator_G Loss: 198.7271
+  Generator_F Loss: 169.1278
+  Discriminator_X Loss: 10.6987
+  Discriminator_Y Loss: 3.0870
+  Cycle Consistency Loss: 209.1496
+  Identity Loss: 45.3723
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [20/160] completed in 3.08 minutes.
+  Generator_G Loss: 198.2776
+  Generator_F Loss: 165.6227
+  Discriminator_X Loss: 10.9879
+  Discriminator_Y Loss: 2.7460
+  Cycle Consistency Loss: 205.5224
+  Identity Loss: 45.2497
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [21/160] completed in 3.08 minutes.
+  Generator_G Loss: 202.1860
+  Generator_F Loss: 168.9406
+  Discriminator_X Loss: 11.4935
+  Discriminator_Y Loss: 2.6247
+  Cycle Consistency Loss: 209.0688
+  Identity Loss: 45.2341
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [22/160] completed in 3.08 minutes.
+  Generator_G Loss: 199.5462
+  Generator_F Loss: 170.5208
+  Discriminator_X Loss: 10.2634
+  Discriminator_Y Loss: 2.4024
+  Cycle Consistency Loss: 208.1762
+  Identity Loss: 43.6781
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [23/160] completed in 3.08 minutes.
+  Generator_G Loss: 198.0102
+  Generator_F Loss: 170.0655
+  Discriminator_X Loss: 9.8201
+  Discriminator_Y Loss: 3.1002
+  Cycle Consistency Loss: 205.2268
+  Identity Loss: 44.1104
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [24/160] completed in 3.10 minutes.
+  Generator_G Loss: 199.4228
+  Generator_F Loss: 171.0889
+  Discriminator_X Loss: 9.9236
+  Discriminator_Y Loss: 2.2494
+  Cycle Consistency Loss: 204.1655
+  Identity Loss: 45.8826
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [25/160] completed in 3.09 minutes.
+  Generator_G Loss: 200.3286
+  Generator_F Loss: 169.1759
+  Discriminator_X Loss: 9.2384
+  Discriminator_Y Loss: 2.3062
+  Cycle Consistency Loss: 200.0456
+  Identity Loss: 45.8655
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [26/160] completed in 3.09 minutes.
+  Generator_G Loss: 193.6277
+  Generator_F Loss: 167.6844
+  Discriminator_X Loss: 9.2620
+  Discriminator_Y Loss: 2.5985
+  Cycle Consistency Loss: 198.7593
+  Identity Loss: 42.1070
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [27/160] completed in 3.12 minutes.
+  Generator_G Loss: 196.3654
+  Generator_F Loss: 169.7223
+  Discriminator_X Loss: 9.1102
+  Discriminator_Y Loss: 2.3429
+  Cycle Consistency Loss: 199.4091
+  Identity Loss: 42.5015
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [28/160] completed in 3.10 minutes.
+  Generator_G Loss: 193.4958
+  Generator_F Loss: 168.8406
+  Discriminator_X Loss: 8.1382
+  Discriminator_Y Loss: 1.8196
+  Cycle Consistency Loss: 194.4275
+  Identity Loss: 42.5795
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [29/160] completed in 3.08 minutes.
+  Generator_G Loss: 193.7189
+  Generator_F Loss: 170.9978
+  Discriminator_X Loss: 8.3004
+  Discriminator_Y Loss: 1.7425
+  Cycle Consistency Loss: 196.1244
+  Identity Loss: 42.6358
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [30/160] completed in 3.08 minutes.
+  Generator_G Loss: 192.1936
+  Generator_F Loss: 172.9174
+  Discriminator_X Loss: 7.6071
+  Discriminator_Y Loss: 2.8024
+  Cycle Consistency Loss: 196.2625
+  Identity Loss: 43.0487
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [31/160] completed in 3.08 minutes.
+  Generator_G Loss: 194.0152
+  Generator_F Loss: 171.2711
+  Discriminator_X Loss: 7.9043
+  Discriminator_Y Loss: 2.4214
+  Cycle Consistency Loss: 196.1377
+  Identity Loss: 42.3614
+------------------------------------------------------------
+------------------------------------------------------------
+Epoch [32/160] completed in 3.09 minutes.
+  Generator_G Loss: 194.2688
+  Generator_F Loss: 177.9886
+  Discriminator_X Loss: 7.0671
+  Discriminator_Y Loss: 1.8482
+  Cycle Consistency Loss: 199.8507
+  Identity Loss: 42.9705
 ------------------------------------------------------------
