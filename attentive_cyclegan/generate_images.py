@@ -13,7 +13,7 @@ target_state_name = "haryana"
 
 
 # Set paths manually
-WEIGHTS_PATH = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_{source_state_name}_to_{target_state_name}_20.pth"
+WEIGHTS_PATH = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/weights/generator_{source_state_name}_to_{target_state_name}_40.pth"
 SOURCE_DIR = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/region_performance/{source_state_name}_same_class_count_10_120_1000/images"
 OUTPUT_DIR = f"/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/synthetic_data/{source_state_name}_to_{target_state_name}/images"
 
