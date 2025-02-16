@@ -53,7 +53,7 @@ def train(source, target, batch_size,source_state,target_state, num_epochs, devi
 
     # Learning rate schedulers
     def lr_lambda(epoch):
-        return 1.0 - max(0, epoch - 10) / 150  
+        return 1.0 - max(0, epoch - 50) / 110  
 
     scheduler_g = optim.lr_scheduler.LambdaLR(generator_g_optimizer, lr_lambda=lr_lambda)
     scheduler_f = optim.lr_scheduler.LambdaLR(generator_f_optimizer, lr_lambda=lr_lambda)

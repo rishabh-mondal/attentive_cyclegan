@@ -19,7 +19,7 @@ def adversarial_loss(pred, target):
     return mse_loss(pred, target)
 
 
-def cycle_consistency_loss(real, cycled, lambda_cycle=10.0):
+def cycle_consistency_loss(real, cycled, lambda_cycle=7.0):
     """
     Computes cycle consistency loss (L1 loss between real and cycled images).
 
@@ -34,7 +34,7 @@ def cycle_consistency_loss(real, cycled, lambda_cycle=10.0):
     return l1_loss(real, cycled) * lambda_cycle
 
 
-def identity_loss(real, same, lambda_identity=2.0):
+def identity_loss(real, same, lambda_identity=1.0):
     """
     Computes identity loss (L1 loss between real and identity-mapped image).
 

@@ -21,7 +21,7 @@ echo "   🔹 Script Path : $PYTHON_SCRIPT" | tee -a $LOG_FILE
 echo "===============================" | tee -a $LOG_FILE
 
 # Run Python script with nohup & log output
-nohup bash -c "CUDA_VISIBLE_DEVICES=1,2,3 python $PYTHON_SCRIPT" > "$LOG_FILE" 2>&1 &
+nohup bash -c "CUDA_VISIBLE_DEVICES=1,3 python $PYTHON_SCRIPT" > "$LOG_FILE" 2>&1 &
 
 # Get process ID (PID)
 PID=$!

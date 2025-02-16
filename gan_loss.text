@@ -1,0 +1,21 @@
+✅ 1️⃣ Expected Behavior of Losses During Training
+Loss Name	What It Represents	How It Should Change?
+Generator G Loss (G_loss)	How well G(X → Y) fools D_Y	🔻 Decrease (but remain balanced with D_Y)
+Generator F Loss (F_loss)	How well F(Y → X) fools D_X	🔻 Decrease (but remain balanced with D_X)
+Discriminator X Loss (D_X_loss)	How well D_X distinguishes real from fake X	🔻 Should fluctuate, but stay stable
+Discriminator Y Loss (D_Y_loss)	How well D_Y distinguishes real from fake Y	🔻 Should fluctuate, but stay stable
+Cycle Consistency Loss (Cycle_loss)	How well G(F(Y)) ≈ Y and F(G(X)) ≈ X	🔻 Should decrease, but not too much
+Identity Loss (Identity_loss)	How well images keep their original style	🔻 Should decrease, but stay small
+
+✅ 2️⃣ Understanding Loss Trends
+🔹 What Does a "Good" Training Look Like?
+
+Generator losses (G_loss, F_loss) should slowly decrease (but not go to 0).
+Discriminator losses (D_X_loss, D_Y_loss) should stabilize (fluctuate between 0.2 - 0.6).
+Cycle Consistency & Identity loss should decrease but not go to 0.
+🔹 Possible Issues & Fixes
+
+Issue	Symptom	Fix
+Mode Collapse (Generators cheat by producing the same images)	G_loss & F_loss drop too fast, D_X_loss & D_Y_loss drop to 0	Increase G_lr, use Spectral Norm in D, add noise
+Overpowered Discriminators	D_X_loss & D_Y_loss → 0.01, G_loss & F_loss keep increasing	Reduce D_lr (1e-5), use label smoothing (0.9 instead of 1.0)
+Poor Image Quality	Cycle_loss & Identity_loss stay high (> 1000)	Lower λ_cycle to 5.0, lower λ_id to 0.1

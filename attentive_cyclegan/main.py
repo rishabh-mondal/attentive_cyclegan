@@ -3,7 +3,7 @@ from utils.dataset import load_images
 from utils.train import train
 
 # Define configurable hyperparameters
-BATCH_SIZE = 6
+BATCH_SIZE = 4
 EPOCHS = 160
 
 # Automatically detect available GPUs
