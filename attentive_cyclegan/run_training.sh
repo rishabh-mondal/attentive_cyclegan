@@ -1,11 +1,10 @@
-
 #!/bin/bash
 
-# Define log file
-LOG_FILE="train_log.log"
+# Define log file with a timestamp to prevent overwriting
+LOG_FILE="train_log_$(date +'%Y%m%d_%H%M%S').log"
 
 # Define hyperparameters
-BATCH_SIZE=1
+BATCH_SIZE=2
 EPOCHS=160
 NUM_GPUS=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)
 PYTHON_SCRIPT="/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/attentive_cyclegan/attentive_cyclegan/main.py"
@@ -20,9 +19,20 @@ echo "   🔹 GPUs Used   : $NUM_GPUS" | tee -a $LOG_FILE
 echo "   🔹 Script Path : $PYTHON_SCRIPT" | tee -a $LOG_FILE
 echo "===============================" | tee -a $LOG_FILE
 
-# Run Python script with nohup & log output
-nohup bash -c "CUDA_VISIBLE_DEVICES=0,1,3 python $PYTHON_SCRIPT" > "$LOG_FILE" 2>&1 &
+# # Check if CUDA is available
+# if ! command -v nvidia-smi &>/dev/null; then
+#     echo "❌ CUDA not available. Exiting." | tee -a $LOG_FILE
+#     exit 1
+# fi
 
-# Get process ID (PID)
-PID=$!
-echo "✅ Training started with PID: $PID (Logs: $LOG_FILE)"
+# Run Python script with nohup & log output
+echo "✅ Starting training..." | tee -a $LOG_FILE
+nohup bash -c "CUDA_VISIBLE_DEVICES=0,1 python $PYTHON_SCRIPT" > "$LOG_FILE" 2>&1 &
+
+# # Get process ID (PID)
+# PID=$!
+echo "✅ Training started with PID: $PID. Logs are saved in $LOG_FILE" | tee -a $LOG_FILE
+
+# # Wait for the training process to finish
+# wait $PID
+# echo "✅ Training completed. Logs are saved in $LOG_FILE."

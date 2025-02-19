@@ -1,13 +1,16 @@
 import torch
 import torch.nn as nn
-import lpips  # Learned Perceptual Image Patch Similarity (LPIPS)
+import lpips  
 import torchvision.models as models
 import torch.nn.functional as F
 
 # Define loss functions
 mse_loss = nn.MSELoss()
 l1_loss = nn.L1Loss()
-lpips_loss = lpips.LPIPS(net='vgg')  # LPIPS Perceptual Loss
+
+# Initialize LPIPS loss (only once, globally)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+lpips_loss = lpips.LPIPS(net='vgg').to(device)
 
 def hinge_loss_discriminator(real_pred, fake_pred):
     """
@@ -70,10 +73,12 @@ class VGGPerceptualLoss(nn.Module):
     """
     def __init__(self, device="cuda"):
         super().__init__()
-        self.device = torch.device(device if torch.cuda.is_available() else "cpu")
+        self.device = device
 
+        # Initialize VGG model (only once)
         vgg = models.vgg19(weights=models.VGG19_Weights.IMAGENET1K_V1).features[:16]  # Use first 16 layers
-        vgg.eval().to(self.device)  # Move to device and set eval mode
+        vgg.eval()  # Set VGG to eval mode
+        vgg.to(self.device)  # Move VGG model to device
 
         for param in vgg.parameters():
             param.requires_grad = False  # Freeze VGG parameters
@@ -105,8 +110,8 @@ def perceptual_loss(fake, real, lambda_perceptual=0.1):
     Returns:
         torch.Tensor: Combined perceptual loss.
     """
-    device = fake.device  # Ensure all computations are on the same device
-    vgg_loss_fn = VGGPerceptualLoss(device=device).to(device)  # Instantiate VGG loss on the correct device
-    lpips_loss.to(device)  # Move LPIPS to the correct device
+    # Use pre-initialized LPIPS and VGG loss
+    vgg_loss_fn = VGGPerceptualLoss(device=fake.device)  # Instantiate VGG loss on the correct device
 
+    # Combined perceptual loss
     return lambda_perceptual * (vgg_loss_fn(fake, real) + lpips_loss(fake, real).mean())

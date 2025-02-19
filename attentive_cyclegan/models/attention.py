@@ -1,23 +1,29 @@
 import torch
 import torch.nn as nn
+from torch.nn.utils import spectral_norm
 
 class SelfAttention(nn.Module):
     """Self-Attention Mechanism for capturing global dependencies."""
     def __init__(self, in_channels):
         super(SelfAttention, self).__init__()
-        self.query = nn.Conv2d(in_channels, in_channels // 8, kernel_size=1)
-        self.key = nn.Conv2d(in_channels, in_channels // 8, kernel_size=1)
-        self.value = nn.Conv2d(in_channels, in_channels, kernel_size=1)
-        self.softmax = nn.Softmax(dim=-1)
+        
+        # Apply spectral normalization to Conv2d layers directly
+        self.query = spectral_norm(nn.Conv2d(in_channels, in_channels // 8, kernel_size=1))
+        self.key = spectral_norm(nn.Conv2d(in_channels, in_channels // 8, kernel_size=1))
+        self.value = spectral_norm(nn.Conv2d(in_channels, in_channels, kernel_size=1))
+        
+        self.softmax = nn.Softmax(dim=-1)  # Softmax on the last dimension (H*W)
 
     def forward(self, x):
         batch, C, H, W = x.size()
+
+        # Reshape for multi-head attention compatibility: [B, H*W, C//8]
         query = self.query(x).view(batch, -1, H * W).permute(0, 2, 1)  # [B, H*W, C//8]
         key = self.key(x).view(batch, -1, H * W)  # [B, C//8, H*W]
-        attention = self.softmax(torch.bmm(query, key))  # Compute attention map
+        attention = self.softmax(torch.bmm(query, key))  # Compute attention map (B, H*W, H*W)
 
         value = self.value(x).view(batch, -1, H * W)  # [B, C, H*W]
-        out = torch.bmm(value, attention.permute(0, 2, 1)).view(batch, C, H, W)  # Apply attention
+        out = torch.bmm(value, attention.permute(0, 2, 1)).view(batch, C, H, W)  # Apply attention to values
 
         return x + out  # Residual connection
 

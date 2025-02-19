@@ -4,8 +4,7 @@ import datetime
 from utils.dataset import load_images
 from utils.train import train
 
-# Define configurable hyperparameters
-BATCH_SIZE = 1
+BATCH_SIZE = 2
 EPOCHS = 160
 
 # Automatically detect available GPUs
@@ -15,24 +14,26 @@ DEVICE = "cuda" if torch.cuda.is_available() and NUM_GPUS > 0 else "cpu"
 # Print GPU information
 # if DEVICE == "cuda":
 #     print(f"🚀 Detected {NUM_GPUS} GPUs:")
-#     os.system("nvidia-smi")  # Show GPU details
+#     for i in range(NUM_GPUS):
+#         print(f"  {i}: {torch.cuda.get_device_name(i)}")
+    # os.system("nvidia-smi")  # Show detailed GPU status
 
 # Define dataset directories
-SOURCE_DIR = "/home/umang.shikarvar/distance_exp/west_bengal_same_class_count_10_120_1000/images"
-TARGET_DIR = "/home/umang.shikarvar/distance_exp/haryana_same_class_count_10_120_1000/images"
+SOURCE_DIR = "/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/region_performance/west_bengal_same_class_count_10_120_1000/images"
+TARGET_DIR = "/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/region_performance/haryana_same_class_count_10_120_1000/images"
 
-# Load datasets
-try:
-    source_dataloader = load_images(SOURCE_DIR, BATCH_SIZE)
-    target_dataloader = load_images(TARGET_DIR, BATCH_SIZE)
-except Exception as e:
-    print(f"❌ Error loading datasets: {e}")
-    exit(1)
+source_dataloader = load_images(SOURCE_DIR, BATCH_SIZE)
+target_dataloader = load_images(TARGET_DIR, BATCH_SIZE)
+
 
 # Generate unique log directory with timestamp
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 LOG_DIR = f"tb_logs_directory/{timestamp}"
 os.makedirs(LOG_DIR, exist_ok=True)  # Ensure log directory exists
+
+# Clear CUDA cache (helpful if running on GPUs with large models)
+if DEVICE == "cuda":
+    torch.cuda.empty_cache()
 
 if __name__ == "__main__":
     print("=" * 60)
@@ -53,3 +54,5 @@ if __name__ == "__main__":
         device=DEVICE,
         log_dir=LOG_DIR
     )
+    print("✅ Training completed successfully!")
+
