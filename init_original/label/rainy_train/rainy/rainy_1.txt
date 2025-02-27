@@ -1,0 +1,9 @@
+# 1   
+/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/domain_adaptation/rainy/video_data_20180803/cam_GoPro_KYT02/20180709/114GOPRO.zip/114GOPRO/G0034829.JPG
+3 3000 4000 1
+0
+4
+1 2896.0 1583.0 3114.0 1722.0
+1 2312.0 1514.0 2359.0 1555.0
+1 2171.0 1503.0 2201.0 1534.0
+1 2117.0 1490.0 2146.0 1531.0
