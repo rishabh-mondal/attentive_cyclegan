@@ -1,0 +1,7 @@
+# 47
+/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/processed_data/dhaka_grid_train/images/10047496_2730634.tif
+3 640 640 1
+0
+2
+2 601.317760 177.122560 616.696960 198.365440
+2 28.375680 145.385600 47.623040 157.611520

@@ -1,0 +1,6 @@
+# 88
+/home/rishabh.mondal/Brick-Kilns-project/ijcai_2025_kilns/data/processed_data/delhi_airshed/images/8618735_3372705.tif
+3 640 640 1
+0
+1
+2 293.568000 530.192000 323.837440 557.598080
